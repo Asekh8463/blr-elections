@@ -34,6 +34,17 @@ fetch("bbmp.geojson")
   .then(function (data) {
     // use geoJSON
     L.geoJSON(data, {
+        style: function(feature) {
+        switch (feature.properties.id) {
+        case '1': return {
+          fillColor: "#fdae6b",
+          fillOpacity: 0.675,
+          color: "#808080",
+          weight: 3,
+          opacity: 0.8
+        }
+        };
+        }
       onEachFeature: onEachFeature,
     }).addTo(map);
   });
