@@ -1,18 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-UK">
+<head>
+	<base target="_top">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Bangalore Elections</title>
+	
+	<link rel="shortcut icon" type="image/x-icon" href="" />
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bangalore Elections</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <link rel="stylesheet" href="style.css">
-  </head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"></script>
 
-  <body>
-    <div id="map"></div>
-    <script src="script.js"></script>
-  </body>
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		.leaflet-container {
+			height: 100%;
+			width: 100%;
+		}
+	</style>
 
+	<style>#map
+.info { padding: 6px 8px; font: 16px/18px Courier, Courier, sans-serif; font-weight: bold; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 2px; } .info h4 { margin: 0 0 5px; color: #777; }
+</style>
+</head>
+<body>
+
+<div id='map'></div>
+
+<script type="text/javascript" src="bbmp.js"></script>
+
+<script type="text/javascript">
+
+	const map = L.map('map').setView([13.0, 77.6], 11);
+
+	const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  minZoom: 2,
+  maxZoom: 18,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map);
+
+	const info = L.control();
+
+	info.onAdd = function (map) {
+		this._div = L.DomUtil.create('div', 'info');
+		this.update();
+		return this._div;
+	};
+
+	info.update = function (props) {
+		const contents = props ? `<b>${props.Name}</b><br/><b style = "background:rgba(255,199,44,0.4);"> BJP	${props.BJP}	${props.BJPp}%</b><br/><b style = "background:rgba(36,164,255,0.4);"> INC	${props.INC}	${props.INCp}%</b><br/><b style = "background:rgba(113,228,32,0.4);"> JD(S)	${props.JDS}	${props.JDSp}%</b><br/><b style = "background:rgba(160,160,160,0.4);"> Others	${props.OTH}	${props.OTHp}%</b><br/><b>	Turnout	${props.turnout}%</b>` : 'Hover over a constituency';
+		this._div.innerHTML = `<h4>2013 election</h4>${contents}`;
+	};
+
+	info.addTo(map);
+
+	function getColor(d) {
+		return d > 32 ? '#7f2704' : //BJP 25%+
+			d > 31 ? '#a63603' : //BJP 20%-25%
+			d > 30  ? '#d94801' : //BJP 15%-20%
+			d > 29  ? '#f16913' : //BJP 12.5%-15%
+			d > 28  ? '#fd8d3c' : //BJP 10%-12.5%
+			d > 27   ? '#fdae6b' : //BJP 7.5%-10%
+			d > 26  ? '#fdd0a2' : //BJP 5%-7.5%
+			d > 25   ? '#fee6ce' : //BJP 2.5%-5%
+			d > 24   ? '#fff5eb' : //BJP 0%-2.5%
+			d > 23   ? '#08306b' : //INC 25%+
+			d > 22   ? '#08519c' : //INC 20%-25%
+			d > 21   ? '#2171b5' : //INC 15%-20%
+			d > 20   ? '#4292c6' : //INC 12.5%-15%
+			d > 19   ? '#6baed6' : //INC 10%-12.5%
+			d > 18   ? '#9ecae1' : //INC 7.5%-10%
+			d > 17   ? '#c6dbef' : //INC 5%-7.5%
+			d > 16   ? '#deebf7' : //INC 2.5%-5%
+			d > 15   ? '#f7fbff' : //INC 0%-2.5%
+			d > 9   ? '#00441b' : //JD(S) 25%+
+			d > 8   ? '#006d2c' : //JD(S) 20%-25%
+			d > 7   ? '#238b45' : //JD(S) 15%-20%
+			d > 6   ? '#41ab5d' : //JD(S) 12.5%-15%
+			d > 5   ? '#74c476' : //JD(S) 10%-12.5%
+			d > 4   ? '#a1d99b' : //JD(S) 7.5%-10%
+			d > 3   ? '#c7e9c0' : //JD(S) 5%-7.5%
+			d > 2   ? '#e5f5e0' : //JD(S) 2.5%-5%
+			d > 1   ? '#f7fcf5' : //JD(S) 0%-2.5%
+			'#ffffff';
+	}
+
+	function style(feature) {
+		return {
+			weight: 2,
+			opacity: 0.9,
+			color: '#C0C0C0',
+			dashArray: '3',
+			fillOpacity: 0.675,
+			fillColor: getColor(feature.properties.ID)
+		};
+	}
+
+	function highlightFeature(e) {
+		const layer = e.target;
+
+		layer.setStyle({
+			weight: 4,
+			color: '#404040',
+			dashArray: '',
+			fillOpacity: 0.675
+		});
+
+		layer.bringToFront();
+
+		info.update(layer.feature.properties);
+	}
+
+	const geojson = L.geoJson(bbmp13, {
+		style,
+		onEachFeature
+	}).addTo(map);
+
+	function resetHighlight(e) {
+		geojson.resetStyle(e.target);
+		info.update();
+	}
+
+	function zoomToFeature(e) {
+		map.fitBounds(e.target.getBounds());
+	}
+
+	function onEachFeature(feature, layer) {
+		layer.on({
+			mouseover: highlightFeature,
+			mouseout: resetHighlight,
+			click: zoomToFeature
+		});
+	}
+
+	map.attributionControl.addAttribution('Election Data from; <a href="https://eci.gov.in/">Election Commission of India</a>');
+</script>
+</body>
 </html>
