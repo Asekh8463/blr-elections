@@ -39125,7 +39125,7 @@
       },
       properties: {
         Name: "Malleswaram",
-        ID: 31.5
+        ID: 30.5
       }
     },
     {
@@ -56066,7 +56066,16 @@
       },
       properties: {
         Name: "Shanthi Nagar",
-        ID: 21.5
+        ID: 21.5,
+		BJP: 10930,
+		BJPp: 10.55,
+		INC: 54342,
+		INCp: 52.45,
+		JDS: 34155,
+		JDSp: 32.96,
+		OTH: 4183,
+		OTHp: 4.04,
+		turnout: 57.73
       }
     },
     {
@@ -57940,7 +57949,16 @@
       },
       properties: {
         Name: "Gandhi Nagar",
-        ID: 22.5
+        ID: 22.5,
+		BJP: 32361,
+		BJPp: "29.20",
+		INC: 54968,
+		INCp: "49.60",
+		JDS: 7418,
+		JDSp: 6.69,
+		OTH: 16081,
+		OTHp: 14.51,
+		turnout: 57.44
       }
     },
     {
@@ -59662,7 +59680,16 @@
       },
       properties: {
         Name: "Rajaji Nagar",
-        ID: 29.5
+        ID: 29.5,
+		BJP: 39291,
+		BJPp: 36.45,
+		INC: 24524,
+		INCp: 22.75,
+		JDS: 16794,
+		JDSp: 15.58,
+		OTH: 27193,
+		OTHp: 25.22,
+		turnout: 61.16
       }
     },
     {
@@ -64128,7 +64155,16 @@
       },
       properties: {
         Name: "Govindaraja Nagar",
-        ID: 23.5
+        ID: 23.5,
+		BJP: 30194,
+		BJPp: 23.01,
+		INC: 72654,
+		INCp: 55.36,
+		JDS: 20662,
+		JDSp: 15.74,
+		OTH: 7727,
+		OTHp: 5.89,
+		turnout: "54.80"
       }
     },
     {
@@ -66197,8 +66233,17 @@
         ]
       },
       properties: {
-        Name: "Vijaya Nagar",
-        ID: 22.5
+        Name: "Vijay Nagar",
+        ID: 22.5,
+		BJP: 44249,
+		BJPp: 33.22,
+		INC: 76891,
+		INCp: 57.73,
+		JDS: 4253,
+		JDSp: 3.19,
+		OTH: 7804,
+		OTHp: 5.86,
+		turnout: 56.45
       }
     },
     {
@@ -67612,7 +67657,16 @@
       },
       properties: {
         Name: "Chamarajpet",
-        ID: 9.5
+        ID: 9.5,
+		BJP: 17720,
+		BJPp: 16.46,
+		INC: 26177,
+		INCp: 24.31,
+		JDS: 56339,
+		JDSp: 52.32,
+		OTH: 7433,
+		OTHp: 6.91,
+		turnout: 56.02
       }
     },
     {
@@ -69378,7 +69432,16 @@
       },
       properties: {
         Name: "Chickpet",
-        ID: 19.5
+        ID: 19.5,
+		BJP: 31655,
+		BJPp: 29.09,
+		INC: 44714,
+		INCp: 41.09,
+		JDS: 24382,
+		JDSp: 22.41,
+		OTH: 8063,
+		OTHp: 7.41,
+		turnout: 57.97
       }
     },
     {
@@ -74143,7 +74206,16 @@
       },
       properties: {
         Name: "Padmanaba Nagar",
-        ID: 30.5
+        ID: 30.5,
+		BJP: 53680,
+		BJPp: 41.82,
+		INC: 33557,
+		INCp: 26.14,
+		JDS: 26272,
+		JDSp: 20.47,
+		OTH: 14844,
+		OTHp: 11.56,
+		turnout: 58.41
       }
     },
     {
@@ -88986,7 +89058,16 @@
       },
       properties: {
         Name: "Bommana Halli",
-        ID: 29.5
+        ID: 29.5,
+		BJP: 86552,
+		BJPp: 49.53,
+		INC: 60700,
+		INCp: 34.74,
+		JDS: 10621,
+		JDSp: 6.08,
+		OTH: 16861,
+		OTHp: 9.65,
+		turnout: 54.08
       }
     },
     {
