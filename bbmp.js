@@ -9287,7 +9287,16 @@
       },
       properties: {
         Name: "K.R. Puram",
-        ID: 19.5
+        ID: 19.5,
+		BJP: 82298,
+		BJPp: 41.11,
+		INC: 106299,
+		INCp: "53.10",
+		JDS: 3955,
+		JDSp: 1.98,
+		OTH: 7632,
+		OTHp: 3.81,
+		turnout: 58.92
       }
     },
     {
@@ -21038,7 +21047,16 @@
       },
       properties: {
         Name: "Yeshwantpura",
-        ID: 20.5
+        ID: 20.5,
+		BJP: 12747,
+		BJPp: 5.51,
+		INC: 120380,
+		INCp: "52.00",
+		JDS: 91280,
+		JDSp: 39.43,
+		OTH: 7108,
+		OTHp: 3.07,
+		turnout: 66.22
       }
     },
     {
@@ -34945,7 +34963,16 @@
       },
       properties: {
         Name: "Dasarahalli",
-        ID: 26.5
+        ID: 26.5,
+		BJP: 57562,
+		BJPp: "30.10",
+		INC: 46734,
+		INCp: 24.44,
+		JDS: 43049,
+		JDSp: 22.51,
+		OTH: 43913,
+		OTHp: 22.96,
+		turnout: "55.50"
       }
     },
     {
@@ -37179,7 +37206,16 @@
       },
       properties: {
         Name: "Mahalakshmi Layout",
-        ID: 5.5
+        ID: 5.5,
+		BJP: 23545,
+		BJPp: 15.93,
+		INC: 50757,
+		INCp: 34.33,
+		JDS: 66127,
+		JDSp: 44.73,
+		OTH: 7420,
+		OTHp: 5.02,
+		turnout: "60.20"
       }
     },
     {
@@ -39125,7 +39161,16 @@
       },
       properties: {
         Name: "Malleswaram",
-        ID: 30.5
+        ID: 30.5,
+		BJP: 57609,
+		BJPp: 53.19,
+		INC: 36534,
+		INCp: 33.74,
+		JDS: 2827,
+		JDSp: 2.61,
+		OTH: 11320,
+		OTHp: 10.45,
+		turnout: 62.33
       }
     },
     {
@@ -40751,7 +40796,16 @@
       },
       properties: {
         Name: "Hebbal",
-        ID: 25.5
+        ID: 25.5,
+		BJP: 38162,
+		BJPp: 33.03,
+		INC: 33026,
+		INCp: 28.58,
+		JDS: 25073,
+		JDSp: "21.70",
+		OTH: 19279,
+		OTHp: 16.69,
+		turnout: 54.89
       }
     },
     {
@@ -42869,7 +42923,16 @@
       },
       properties: {
         Name: "Pulakeshi Nagar",
-        ID: 5.5
+        ID: 5.5,
+		BJP: 4589,
+		BJPp: 4.57,
+		INC: 38796,
+		INCp: "38.60",
+		JDS: 48995,
+		JDSp: 48.75,
+		OTH: 8121,
+		OTHp: 8.08,
+		turnout: 56.38
       }
     },
     {
@@ -46367,7 +46430,16 @@
       },
       properties: {
         Name: "Sarvagna Nagar",
-        ID: 21.5
+        ID: 21.5,
+		BJP: 46820,
+		BJPp: 33.28,
+		INC: 69673,
+		INCp: 49.53,
+		JDS: 7711,
+		JDSp: 5.48,
+		OTH: 16468,
+		OTHp: 11.71,
+		turnout: 50.23
       }
     },
     {
@@ -50773,7 +50845,16 @@
       },
       properties: {
         Name: "C.V. Raman nagar",
-        ID: 27.5
+        ID: 27.5,
+		BJP: 53364,
+		BJPp: 50.26,
+		INC: 44945,
+		INCp: 42.33,
+		JDS: 3174,
+		JDSp: 2.99,
+		OTH: 4695,
+		OTHp: 4.42,
+		turnout: 53.86
       }
     },
     {
